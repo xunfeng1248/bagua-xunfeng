@@ -1,0 +1,23 @@
+server:
+  port: 21000
+
+spring:
+  application:
+    name: bagua-xunfeng
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: mac-372@Lihuo
+    url: jdbc:mysql://localhost:3306/bagua_xunfeng?characterEncoding=UTF-8&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.xunfeng.application.baguaxunfeng.domain.entity
+mapper:
+  identity: mysql
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  params: count=countSql
