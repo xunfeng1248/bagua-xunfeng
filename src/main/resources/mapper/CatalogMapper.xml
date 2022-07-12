@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xunfeng.application.baguaxunfeng.mapper.CatalogMapper" >
+    <resultMap id="BaseResultMap" type="com.xunfeng.application.baguaxunfeng.domain.entity.Catalog" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="code" property="code" jdbcType="VARCHAR" />
+        <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="TINYINT" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
+        <result column="create_time" property="createTime" jdbcType="DATETIME" />
+        <result column="modify_time" property="modifyTime" jdbcType="DATETIME" />
+    </resultMap>
+
+    <sql id="BaseColumn">
+            id,
+            code,
+            parent_code,
+            `name`,
+            `state`,
+            description,
+            is_delete,
+            create_time,
+            modify_time
+    </sql>
+
+</mapper>

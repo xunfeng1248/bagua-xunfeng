@@ -6,7 +6,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `catalog`;
 CREATE TABLE `catalog` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '栏目编码\n全局唯一',
   `parent_code` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '栏目父编码\n设置顶级栏目为[root]',
   `name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '栏目名称',
@@ -37,10 +37,10 @@ CREATE TABLE `doc` (
 -- Table structure for doc_catolog
 -- ----------------------------
 DROP TABLE IF EXISTS `doc_catolog`;
-CREATE TABLE `doc_catolog` (
+CREATE TABLE `doc_catalog` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `doc_id` bigint NOT NULL COMMENT '文档id',
-  `catolog_id` bigint NOT NULL COMMENT '栏目id',
+  `catalog_id` bigint NOT NULL COMMENT '栏目id',
   `is_delete` tinyint(1) NOT NULL DEFAULT '0',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
